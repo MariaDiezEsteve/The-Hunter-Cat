@@ -1,0 +1,30 @@
+body {
+    margin: 0;
+    background-color: white;
+  }
+
+
+#my-canvas {
+    background-color: #74747c;
+  }
+  
+#start-btn, #restart-btn {
+    background-color:#202d3c;
+    color: white;
+    padding: 45px;
+    font-size: 70px;
+    margin-top: 40px;
+    border-radius: 10px; 
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 40px;
+  }
+
+  #my-canvas, #gameover-screen {
+      display: none;
+  }
