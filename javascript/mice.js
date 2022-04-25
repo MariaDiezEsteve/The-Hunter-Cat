@@ -3,13 +3,10 @@ class Mice {
     constructor (){
         this.x = 50;
         this.y = 200;
-        this.w = 100;
-        this.h = 100;
+        this.w = 80;
+        this.h = 80;
         this.img = new Image()
         this.img.src="../images/mouse.png"
-       // this.speed = 4;
-
-
     }
 
     // Métodos de Mice

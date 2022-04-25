@@ -1,6 +1,9 @@
 const startBtn = document.querySelector("#start-btn")
+const restartBtn = document.querySelector("#restart-btn")
 const initialScreen = document.querySelector("#splash-screen");
+const gameOverScreen = document.querySelector("#gameover-screen")
 const canvas = document.querySelector("#my-canvas");
+const scoreTotal = document.querySelector("#scoretotal")
 const ctx = canvas.getContext("2d");
 
 let game;
@@ -9,8 +12,9 @@ let game;
 const startGame = (event) => {
     //Iniciando el juego
 
-initialScreen.style.display = "none";
-canvas.style.display = "block";
+    initialScreen.style.display = "none";
+    canvas.style.display = "block";
+    gameOverScreen.style.display = "none";
 
 
     //Lógica del juego
@@ -47,5 +51,5 @@ const keyPressRight = (event) => {
 }
 
 
-
 startBtn.addEventListener("click", startGame);
+restartBtn.addEventListener("click", startGame);
