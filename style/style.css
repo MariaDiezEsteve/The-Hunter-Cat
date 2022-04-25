@@ -8,13 +8,17 @@ body {
     background-color: #74747c;
   }
   
-#start-btn, #restart-btn {
-    background-color:#202d3c;
+#start-btn, #restart-btn, #back-btn{
+    background-color: BLACK;
     color: white;
     padding: 45px;
     font-size: 50px;
     margin-top: 40px;
     border-radius: 10px; 
+    text-align: center;
+    justify-content: center;
+    width: 50%;
+
   }
 
   .container {
@@ -32,7 +36,10 @@ body {
 
   #scoreTotal {
     color: #202d3c;
-    font-size: x-large;
+    font-size: large;
     display: none;
-    width: 150px;
+    width: 100px;
+    font-weight: bold;
+    font-size: 30px;
+    
   }

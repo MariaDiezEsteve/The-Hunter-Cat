@@ -1,5 +1,6 @@
-const startBtn = document.querySelector("#start-btn")
-const restartBtn = document.querySelector("#restart-btn")
+const startBtn = document.querySelector("#start-btn");
+const restartBtn = document.querySelector("#restart-btn");
+const endGameBtn = document.querySelector("#back-btn");
 const initialScreen = document.querySelector("#splash-screen");
 const gameOverScreen = document.querySelector("#gameover-screen")
 const canvas = document.querySelector("#my-canvas");
@@ -10,6 +11,11 @@ const ctx = canvas.getContext("2d");
 
 let game;
 
+const backHome = (event) => {
+    initialScreen.style.display = "block";
+    scoreTotal.style.display = "none";
+    gameOverScreen.style.display = "none";
+}
 
 const startGame = (event) => {
     //Iniciando el juego
@@ -57,3 +63,4 @@ const keyPressRight = (event) => {
 
 startBtn.addEventListener("click", startGame);
 restartBtn.addEventListener("click", startGame);
+endGameBtn.addEventListener("click", backHome);

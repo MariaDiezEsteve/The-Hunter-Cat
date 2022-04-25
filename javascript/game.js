@@ -70,10 +70,6 @@ class Game {
 
  
     miceCollision = () => {
-       /* ctx.font = "20px Arial";
-        ctx.fillStyle = "black";
-        ctx.fillText("Score: " + this.score, canvas.width/2, 20); */
-
         let newMice = new Mice()
         this.miceArr.forEach( (eachMice, i) => {   
     if (this.cat.x < eachMice.x + eachMice.w &&
