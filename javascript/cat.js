@@ -1,10 +1,10 @@
 class Cat {
 
     constructor (){
-        this.x = 50;
-        this.y = 200;
-        this.w = 150;
-        this.h = 175;
+        this.x = 0;
+        this.y = Math.floor(Math.random() * 600);
+        this.w = 90;
+        this.h = 125;
         this.img = new Image()
         this.img.src="../images/cat.png"
         this.speed = 40;

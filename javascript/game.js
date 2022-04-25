@@ -1,22 +1,23 @@
 class Game {
     constructor(){
+        this.score = 0;
         this.bg = new Image();
         this.bg.src ="../images/garden1.png";
         this.cat = new Cat();
         this.dogsArr = [new Dogs(0, "../images/dog.png")];
         this.miceArr =[new Mice(0, "../images/mouse.png")];
-        this.space = 800; 
+        this.dogsSpace = 615;
         this.isGameOn = true;
-        this.score = 0;
+       
                 
     }
     // Añadir nuevos Dogs -- Importante cambiar
    addNewDogs = () => {
 
-        if(this.dogsArr[this.dogsArr.length - 1].x  < this.dogsSpace){
-            let randomPositionChange = Math.random() * - 100;
-            let newDogs = new Dogs(randomPositionChange, "../images/dog.png");
-            this.dogsArr.push(newDogs)
+    if(this.dogsArr[this.dogsArr.length - 1].x  < this.dogsSpace){
+        let randomPositionChange = Math.random() * 550;
+        let newDogs = new Dogs(randomPositionChange, "../images/dog.png");
+        this.dogsArr.push(newDogs)
     } 
     } 
 
@@ -33,6 +34,7 @@ class Game {
         })
 
           this.addNewDogs(); 
+          this.miceCollision(); 
           this.borderCollision();
           this.gameOverCollision();
 
@@ -42,10 +44,7 @@ class Game {
          this.dogsArr.forEach((eachDogs) => {
             eachDogs.drawDogs();
       })
-      this.dogsArr.forEach((eachDogs) => {
-        eachDogs.drawDogs();
-  })
-        this.miceArr.forEach((eachMice) =>{
+         this.miceArr.forEach((eachMice) =>{
             eachMice.drawMice();
         });
          
@@ -62,29 +61,37 @@ class Game {
             this.cat.y = - 25;
         } else if(this.cat.x < -10){
             this.cat.x = -10;  
-        } else if (this.cat.y > canvas.height - 145){
-            this.cat.y = canvas.height - 145;  
-        } else if(this.cat.x > canvas.width - 135){
-            this.cat.x = canvas.width - 135;
+        } else if (this.cat.y > canvas.height - 90){
+            this.cat.y = canvas.height - 90;  
+        } else if(this.cat.x > canvas.width - 80){
+            this.cat.x = canvas.width - 80;
         }
     }
 
+ 
     miceCollision = () => {
-        this.miceArr((eachMice) => {
-        this.cat.x < eachMice.x + eachMice.w &&
+       /* ctx.font = "20px Arial";
+        ctx.fillStyle = "black";
+        ctx.fillText("Score: " + this.score, canvas.width/2, 20); */
+
+        let newMice = new Mice()
+        this.miceArr.forEach( (eachMice, i) => {   
+    if (this.cat.x < eachMice.x + eachMice.w &&
         this.cat.x + this.cat.w > eachMice.x &&
         this.cat.y < eachMice.y + eachMice.h &&
-        this.cat.h + this.cat.y > eachMice.y
-        })
+        this.cat.h + this.cat.y > eachMice.y){
+        this.miceArr.splice(this.miceArr[i], 1);
+        this.miceArr.push(newMice);
         this.score = this.score + 1;
-
-    }
+        scoreAccumula.innerText = this.score
     
-
+        }
+    })
+    
+    }
     
     gameOverCollision = () => {
         this.dogsArr.forEach( (eachDogs) => {
-        
     if (this.cat.x < eachDogs.x + eachDogs.w &&
         this.cat.x + this.cat.w > eachDogs.x &&
         this.cat.y < eachDogs.y + eachDogs.h &&

@@ -1,12 +1,12 @@
 class Dogs {
 
-    constructor (yParam, scrParam){
-        this.x = canvas.width;
+    constructor (yParam, scrParam){ 
+        this.x = canvas.width + 50; 
         this.y = yParam;
-        this.w = 100;
-        this.h = 125;
+        this.w = 65;
+        this.h = 90;
         this.img = new Image()
-        this.img.src= scrParam
+        this.img.src= "../images/dog.png"
         this.speed = 4;
 
 

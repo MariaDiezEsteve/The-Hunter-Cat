@@ -9,8 +9,7 @@
 </head>
 <body>
     <div class="container">
-        <!-- <h1 id="score"></h1> --> 
-    
+          
         <!-- SPLASH SCREEN -->
         <div id="splash-screen" class="container">
           <img src="../images/huntercat.png" width="500" alt="logo">
@@ -20,11 +19,10 @@
         </div>
         
         <!-- GAME SCREEN -->
-        <div id ="score">
-            <h3 id="scoretotal">Score:</h3>
-        </div>
-        <canvas id="my-canvas" width="1000" height="700"></canvas>
-        
+               <canvas id="my-canvas" width="1000" height="700"></canvas>
+               <div id="scoreTotal">
+                <p id="score">Score : <span id="score-accumulator">0</span></p>
+              </div>
         
         <!-- GAME OVER SCREEN -->
         <div id="gameover-screen" class="container">

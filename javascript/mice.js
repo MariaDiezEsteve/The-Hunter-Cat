@@ -1,10 +1,10 @@
 class Mice {
 
     constructor (){
-        this.x = 50;
-        this.y = 200;
-        this.w = 80;
-        this.h = 80;
+        this.x = Math.floor(Math.random() * 915);
+        this.y = Math.floor(Math.random() * 615);
+        this.w = 50;
+        this.h = 50;
         this.img = new Image()
         this.img.src="../images/mouse.png"
     }

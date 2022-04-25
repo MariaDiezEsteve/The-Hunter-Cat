@@ -12,7 +12,7 @@ body {
     background-color:#202d3c;
     color: white;
     padding: 45px;
-    font-size: 70px;
+    font-size: 50px;
     margin-top: 40px;
     border-radius: 10px; 
   }
@@ -27,4 +27,12 @@ body {
 
   #my-canvas, #gameover-screen {
       display: none;
+  }
+
+
+  #scoreTotal {
+    color: #202d3c;
+    font-size: x-large;
+    display: none;
+    width: 150px;
   }
