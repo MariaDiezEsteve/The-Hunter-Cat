@@ -7,26 +7,46 @@ body {
 #my-canvas {
     background-color: #74747c;
   }
-  
-#start-btn, #restart-btn, #back-btn{
-    background-color: BLACK;
-    color: white;
-    padding: 45px;
-    font-size: 50px;
-    margin-top: 40px;
-    border-radius: 10px; 
-    text-align: center;
-    justify-content: center;
-    width: 50%;
+#splash-screen {
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
 
-  }
+  
+#start-btn{
+background-color: BLACK;
+color: white;
+padding: 30px 40px;
+font-size: 40px;
+margin: 50px 50px;
+border-radius: 10px; 
+text-align: center;
+justify-content: center;
+width: 500px;
+}
+
+
+
+#restart-btn, #back-btn{
+  display: inline-block;
+  background-color: BLACK;
+  color: white;
+  padding: 10px 10px;
+  font-size: 40px;
+  margin: 20px 20px;
+  border-radius: 10px; 
+  text-align: center;
+  justify-content: center;
+  width: 250px;
+}
 
   .container {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 40px;
+    margin: 20px;
   }
 
   #my-canvas, #gameover-screen {
@@ -36,10 +56,11 @@ body {
 
   #scoreTotal {
     color: #202d3c;
-    font-size: large;
-    display: none;
-    width: 100px;
-    font-weight: bold;
     font-size: 30px;
+    display: none;
+    width: 200px;
+    height: 90px;
+    margin: 20px 20px;
+    font-weight: 800;
     
   }

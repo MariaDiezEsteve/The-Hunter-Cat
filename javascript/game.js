@@ -57,14 +57,14 @@ class Game {
     }
 
     borderCollision = () => {
-        if(this.cat.y < - 25 ){
-            this.cat.y = - 25;
-        } else if(this.cat.x < -10){
-            this.cat.x = -10;  
-        } else if (this.cat.y > canvas.height - 90){
-            this.cat.y = canvas.height - 90;  
-        } else if(this.cat.x > canvas.width - 80){
-            this.cat.x = canvas.width - 80;
+        if(this.cat.y < - 5){
+            this.cat.y = - 5;
+        } else if(this.cat.x < - 8){
+            this.cat.x = - 8;  
+        } else if (this.cat.y > canvas.height - 115){
+            this.cat.y = canvas.height - 115;  
+        } else if(this.cat.x > canvas.width - 90){
+            this.cat.x = canvas.width - 90;
         }
     }
 
@@ -80,6 +80,7 @@ class Game {
         this.miceArr.push(newMice);
         this.score = this.score + 1;
         scoreAccumula.innerText = this.score
+        this.audio = new Audio("./music/musicgame.mp3");
     
         }
     })
@@ -101,7 +102,9 @@ class Game {
 
     // 3. Pantalla final
     gameOverScreen.style.display = "flex";
-    }
+    
+    // 4. Parar el audio
+    audio.pause(); 
 })
 }
 }

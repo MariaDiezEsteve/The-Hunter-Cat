@@ -7,7 +7,7 @@ class Dogs {
         this.h = 90;
         this.img = new Image()
         this.img.src= "../images/dog.png"
-        this.speed = 4;
+        this.speed = 8;
 
 
     }

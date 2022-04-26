@@ -4,7 +4,7 @@ class Cat {
         this.x = 0;
         this.y = Math.floor(Math.random() * 600);
         this.w = 90;
-        this.h = 125;
+        this.h = 115;
         this.img = new Image()
         this.img.src="../images/cat.png"
         this.speed = 40;

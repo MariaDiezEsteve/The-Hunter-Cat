@@ -8,6 +8,7 @@ let scoreTotal = document.querySelector("#scoreTotal");
 let scoreAccumula = document.querySelector("#score-accumulator");
 const ctx = canvas.getContext("2d");
 
+const audio = new Audio("../music/game.mp3")
 
 let game;
 
@@ -18,23 +19,30 @@ const backHome = (event) => {
 }
 
 const startGame = (event) => {
-    //Iniciando el juego
 
+    //Iniciando el juego
     initialScreen.style.display = "none";
     canvas.style.display = "block";
     gameOverScreen.style.display = "none";
+
+    // Score total
     scoreTotal.style.display = "flex";
+
+    // Audio 
+    audio.play(); 
+    audio.volumen = 0.1;
 
 
     //Lógica del juego
 
-game = new Game();
+    game = new Game();
     window.addEventListener("keydown", keyPressUp );
     window.addEventListener("keydown", keyPressDown);
     window.addEventListener("keydown", keyPressLeft);
     window.addEventListener("keydown", keyPressRight);
     scoreAccumula.innerText = 0;
     game.gameLoop()
+ 
 
 }
 // Movimiento de Cat
@@ -64,3 +72,6 @@ const keyPressRight = (event) => {
 startBtn.addEventListener("click", startGame);
 restartBtn.addEventListener("click", startGame);
 endGameBtn.addEventListener("click", backHome);
+
+
+
