@@ -6,11 +6,12 @@ class Game {
         this.cat = new Cat();
         this.dogsArr = [new Dogs(0, "./images/dog.png")];
         this.miceArr = [new Mice(0, "./images/mouse.png")];
-        this.birdsArr= [new Bird(0, "./images/bird.png")];
+        this.birdsArr= [];
         this.dogsSpace = 615;
         this.isGameOn = true;
-        
-                
+        this.counterForBird = 0;
+       
+    
     }
     // Añadir nuevos Dogs -- Importante cambiar
    addNewDogs = () => {
@@ -25,24 +26,23 @@ class Game {
     addDifficult = () =>{
         this.dogsArr.forEach((eachDogs) => {
             if(this.score > 5 && this.score < 12){
-             eachDogs.speed = eachDogs.speed + 1  
+             eachDogs.speed = 5  
              } else if (this.score > 12 && this.score < 20){
-             eachDogs.speed =eachDogs.speed + 1
+             eachDogs.speed = 8
             } else if (this.score > 20){
-             eachDogs.speed = eachDogs.speed + 1
-    }
+             eachDogs.speed = 12
+            }
     })
     }
     
     appearsBird = () => {
-         setTimeout( () => {
-         this.birdsArr.forEach((eachBirds) => {
-         eachBirds.drawBird();
-         this.birdsArr.splice(this.birdsArr[i], 1);
-         this.birdsArr.push(newBirds);
-          });          
-          }, 1000 )
-        }
+       if(this.counterForBird === 5 || this.counterForBird === 25 || this.counterForBird === 40){
+        this.birdsArr.push(new Bird (0,"./images/bird.png" ));
+        this.counterForBird ++;
+       } else if (this.counterForBird === 15 || this.counterForBird === 32 || this.counterForBird === 50){
+        this.birdsArr.pop();
+       }
+    }  
 
 
 
@@ -75,6 +75,9 @@ class Game {
             eachMice.drawMice();
         });  
         
+        this.birdsArr.forEach((eachBirds) => {
+            eachBirds.drawBird();
+        });
 
     // 4. Control y recursión
       if(this.isGameOn){
@@ -119,10 +122,9 @@ class Game {
         this.birdsArr.splice(this.birdsArr[i], 1);
         this.birdsArr.push(newBirds);
         this.score = this.score + 2;
+        scoreAccumula.innerText = this.score  
     }
     })
-
-
     }
     
     gameOverCollision = () => {
@@ -140,6 +142,8 @@ class Game {
 
     // 3. Pantalla final
     gameOverScreen.style.display = "flex";
+    scoreAccumula.style.display = "none";
+    scoreTotal.style.display = "none";
     scoremuestra.innerText = this.score;
 
     
@@ -149,6 +153,7 @@ class Game {
 })
 }
 }
+
 
 
 

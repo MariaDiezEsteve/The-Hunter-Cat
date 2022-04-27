@@ -12,6 +12,7 @@ let nameOfUser = document.querySelector("#nameOfUser")
 let nameGameOver = document.querySelector("#namePerson")
 let newPlayer;
 
+
 const audio = new Audio("./music/game.mp3");
 
 let game;
@@ -61,6 +62,7 @@ const startGame = (event) => {
 const keyPressUp = (event) => {
     if(event.code === "ArrowUp"){
         game.cat.upCat();
+        game.counterForBird ++;
     }
 }
 const keyPressDown = (event) => {
@@ -76,8 +78,10 @@ const keyPressLeft = (event) => {
 const keyPressRight = (event) => {
     if(event.code === "ArrowRight"){
         game.cat.rigthCat();
+    
     }
 }
+
 
 
 startBtn.addEventListener("click", startGame);
