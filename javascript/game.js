@@ -34,15 +34,15 @@ class Game {
     })
     }
     
-    /* appearsBird = () => {
-         setInterval( () => {
+    appearsBird = () => {
          setTimeout( () => {
          this.birdsArr.forEach((eachBirds) => {
          eachBirds.drawBird();
+         this.birdsArr.splice(this.birdsArr[i], 1);
+         this.birdsArr.push(newBirds);
           });          
           }, 1000 )
-        }, 2000)
-          } */
+        }
 
 
 
@@ -63,7 +63,7 @@ class Game {
           this.gameOverCollision();
           this.addDifficult();
           this.birdCollision(); 
-        //  this.appearsBird();
+          this.appearsBird();
 
     // 3. Dibujar los elementos
          ctx.drawImage(this.bg, 0, 0, canvas.width, canvas.height);
