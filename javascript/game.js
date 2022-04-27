@@ -2,13 +2,14 @@ class Game {
     constructor(){
         this.score = 0;
         this.bg = new Image();
-        this.bg.src ="../images/garden1.png";
+        this.bg.src ="./images/garden1.png";
         this.cat = new Cat();
-        this.dogsArr = [new Dogs(0, "../images/dog.png")];
-        this.miceArr =[new Mice(0, "../images/mouse.png")];
+        this.dogsArr = [new Dogs(0, "./images/dog.png")];
+        this.miceArr = [new Mice(0, "./images/mouse.png")];
+        this.birdsArr= [new Bird(0, "./images/bird.png")];
         this.dogsSpace = 615;
         this.isGameOn = true;
-       
+        
                 
     }
     // Añadir nuevos Dogs -- Importante cambiar
@@ -16,12 +17,35 @@ class Game {
 
     if(this.dogsArr[this.dogsArr.length - 1].x  < this.dogsSpace){
         let randomPositionChange = Math.random() * 550;
-        let newDogs = new Dogs(randomPositionChange, "../images/dog.png");
+        let newDogs = new Dogs(randomPositionChange, "./images/dog.png");
         this.dogsArr.push(newDogs)
     } 
     } 
 
+    addDifficult = () =>{
+        this.dogsArr.forEach((eachDogs) => {
+            if(this.score > 5 && this.score < 12){
+             eachDogs.speed = eachDogs.speed + 1  
+             } else if (this.score > 12 && this.score < 20){
+             eachDogs.speed =eachDogs.speed + 1
+            } else if (this.score > 20){
+             eachDogs.speed = eachDogs.speed + 1
+    }
+    })
+    }
     
+    /* appearsBird = () => {
+         setInterval( () => {
+         setTimeout( () => {
+         this.birdsArr.forEach((eachBirds) => {
+         eachBirds.drawBird();
+          });          
+          }, 1000 )
+        }, 2000)
+          } */
+
+
+
     // Métodos que regulan el juego
     gameLoop = () => {
 
@@ -37,17 +61,19 @@ class Game {
           this.miceCollision(); 
           this.borderCollision();
           this.gameOverCollision();
+          this.addDifficult();
+          this.birdCollision(); 
+        //  this.appearsBird();
 
     // 3. Dibujar los elementos
          ctx.drawImage(this.bg, 0, 0, canvas.width, canvas.height);
          this.cat.drawCat();
          this.dogsArr.forEach((eachDogs) => {
             eachDogs.drawDogs();
-      })
+      });
          this.miceArr.forEach((eachMice) =>{
             eachMice.drawMice();
-        });
-         
+        });  
         
 
     // 4. Control y recursión
@@ -68,8 +94,7 @@ class Game {
         }
     }
 
- 
-    miceCollision = () => {
+     miceCollision = () => {
         let newMice = new Mice()
         this.miceArr.forEach( (eachMice, i) => {   
     if (this.cat.x < eachMice.x + eachMice.w &&
@@ -79,12 +104,25 @@ class Game {
         this.miceArr.splice(this.miceArr[i], 1);
         this.miceArr.push(newMice);
         this.score = this.score + 1;
-        scoreAccumula.innerText = this.score
-        this.audio = new Audio("./music/musicgame.mp3");
-    
-        }
+        scoreAccumula.innerText = this.score  
+    }
     })
-    
+    }
+
+    birdCollision = () => {
+        let newBirds = new Bird()
+        this.birdsArr.forEach( (eachBird, i) => {   
+    if (this.cat.x < eachBird.x + eachBird.w &&
+        this.cat.x + this.cat.w > eachBird.x &&
+        this.cat.y < eachBird.y + eachBird.h &&
+        this.cat.h + this.cat.y > eachBird.y){
+        this.birdsArr.splice(this.birdsArr[i], 1);
+        this.birdsArr.push(newBirds);
+        this.score = this.score + 2;
+    }
+    })
+
+
     }
     
     gameOverCollision = () => {
@@ -102,9 +140,12 @@ class Game {
 
     // 3. Pantalla final
     gameOverScreen.style.display = "flex";
+    scoremuestra.innerText = this.score;
+
     
     // 4. Parar el audio
-    audio.pause(); 
+   // audio.pause(); 
+}
 })
 }
 }

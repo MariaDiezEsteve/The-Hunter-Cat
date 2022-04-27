@@ -6,8 +6,8 @@ class Dogs {
         this.w = 65;
         this.h = 90;
         this.img = new Image()
-        this.img.src= "../images/dog.png"
-        this.speed = 8;
+        this.img.src= "./images/dog.png"
+        this.speed = 1;
 
 
     }

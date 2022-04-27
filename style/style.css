@@ -7,13 +7,14 @@ body {
 #my-canvas {
     background-color: #74747c;
   }
+
 #splash-screen {
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
 }
 
-  
+
 #start-btn{
 background-color: BLACK;
 color: white;
@@ -59,8 +60,40 @@ width: 500px;
     font-size: 30px;
     display: none;
     width: 200px;
-    height: 90px;
+    height: 10px;
     margin: 20px 20px;
     font-weight: 800;
     
   }
+  #name1{
+    display: flex;
+    flex-direction: row;
+
+}
+  #nameOfUser {
+    font-size: 20px;
+    border: 3px solid black;
+    width: 250px;
+    margin: auto;
+
+  }
+
+  #intro-name{
+    font-weight: 800;
+    font-size: 30px;
+    padding-right: 20px;
+}
+
+  #nameOver {
+  font-weight: 800;
+  font-size: 30px;
+  padding-right: 20px;
+}
+
+
+#namePerson {  
+  color:  #351a11;
+  font-weight: 800;
+  font-size: 30px;
+}
+  

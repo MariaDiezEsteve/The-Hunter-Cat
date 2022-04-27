@@ -6,11 +6,16 @@ const gameOverScreen = document.querySelector("#gameover-screen")
 const canvas = document.querySelector("#my-canvas");
 let scoreTotal = document.querySelector("#scoreTotal");
 let scoreAccumula = document.querySelector("#score-accumulator");
-const ctx = canvas.getContext("2d");
+let scoreName = document.querySelector("#scoremuestra")
+const ctx = canvas.getContext("2d")
+let nameOfUser = document.querySelector("#nameOfUser")
+let nameGameOver = document.querySelector("#namePerson")
+let newPlayer;
 
-const audio = new Audio("../music/game.mp3")
+const audio = new Audio("./music/game.mp3");
 
 let game;
+
 
 const backHome = (event) => {
     initialScreen.style.display = "block";
@@ -28,15 +33,21 @@ const startGame = (event) => {
     // Score total
     scoreTotal.style.display = "flex";
 
-    // Audio 
-    audio.play(); 
-    audio.volumen = 0.1;
+    // Nombre del usuario
+    
+    nameGameOver.innerText = nameOfUser.value;
+       
 
+    // Audio 
+  //  audio.play(); 
+   // audio.loop = true;
+    // audio.volumen = 0.01;
+    
 
     //Lógica del juego
 
     game = new Game();
-    window.addEventListener("keydown", keyPressUp );
+    window.addEventListener("keydown", keyPressUp);
     window.addEventListener("keydown", keyPressDown);
     window.addEventListener("keydown", keyPressLeft);
     window.addEventListener("keydown", keyPressRight);
@@ -72,6 +83,5 @@ const keyPressRight = (event) => {
 startBtn.addEventListener("click", startGame);
 restartBtn.addEventListener("click", startGame);
 endGameBtn.addEventListener("click", backHome);
-
 
 

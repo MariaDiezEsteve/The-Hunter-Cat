@@ -6,7 +6,7 @@ class Cat {
         this.w = 90;
         this.h = 115;
         this.img = new Image()
-        this.img.src="../images/cat.png"
+        this.img.src="./images/cat.png"
         this.speed = 40;
 
 
