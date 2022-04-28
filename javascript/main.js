@@ -10,8 +10,6 @@ let scoreName = document.querySelector("#scoremuestra")
 const ctx = canvas.getContext("2d")
 let nameOfUser = document.querySelector("#nameOfUser")
 let nameGameOver = document.querySelector("#namePerson")
-let newPlayer;
-
 
 const audio = new Audio("./music/game.mp3");
 
@@ -37,9 +35,9 @@ const startGame = (event) => {
        
 
     // Audio 
-  //  audio.play(); 
-   // audio.loop = true;
-    // audio.volumen = 0.01;
+    audio.play(); 
+    audio.loop = true;
+    audio.volumen = 0.01;
     
 
     //Lógica del juego

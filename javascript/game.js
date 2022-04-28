@@ -151,7 +151,7 @@ class Game {
 
     
     // 4. Parar el audio
-   // audio.pause(); 
+   audio.pause(); 
 }
 })
 }
