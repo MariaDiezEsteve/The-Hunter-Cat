@@ -10,11 +10,8 @@ let scoreName = document.querySelector("#scoremuestra")
 const ctx = canvas.getContext("2d")
 let nameOfUser = document.querySelector("#nameOfUser")
 let nameGameOver = document.querySelector("#namePerson")
-
-const audio = new Audio("./music/game.mp3");
-
 let game;
-
+const audio = new Audio("./music/game.mp3");
 
 const startGame = (event) => {
 
@@ -28,30 +25,22 @@ const startGame = (event) => {
     scoreTotal.style.display = "flex";
     scoreAccumula.innerText = 0
   
-
     // Nombre del usuario
-    
     nameGameOver.innerText = nameOfUser.value;
        
-
     // Audio 
     audio.play(); 
     audio.loop = true;
     audio.volumen = 0.01;
     
-
     //Lógica del juego
-
     game = new Game();
     window.addEventListener("keydown", keyPressUp);
     window.addEventListener("keydown", keyPressDown);
     window.addEventListener("keydown", keyPressLeft);
     window.addEventListener("keydown", keyPressRight);
     game.gameLoop()
- 
-
-}
-
+ }
 
 const backHome = (event) => {
     initialScreen.style.display = "flex";
@@ -61,7 +50,6 @@ const backHome = (event) => {
 
 
 // Movimiento de Cat
-
 const keyPressUp = (event) => {
     if(event.code === "ArrowUp"){
         game.cat.upCat();
@@ -81,11 +69,8 @@ const keyPressLeft = (event) => {
 const keyPressRight = (event) => {
     if(event.code === "ArrowRight"){
         game.cat.rigthCat();
-    
-    }
+        }
 }
-
-
 
 startBtn.addEventListener("click", startGame);
 restartBtn.addEventListener("click", startGame);

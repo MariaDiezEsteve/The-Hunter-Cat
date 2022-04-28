@@ -15,7 +15,7 @@ class Game {
     }
     // Añadir nuevos Dogs -- Importante cambiar
    addNewDogs = () => {
-
+       
     if(this.dogsArr[this.dogsArr.length - 1].x  < this.dogsSpace){
         let randomPositionChange = Math.random() * 550;
         let newDogs = new Dogs(randomPositionChange, "./images/dog.png");
@@ -56,7 +56,6 @@ class Game {
           this.dogsArr.forEach((eachDogs) => {
               eachDogs.moveDogs();
         })
-
           this.addNewDogs(); 
           this.miceCollision(); 
           this.borderCollision();
@@ -64,10 +63,7 @@ class Game {
           this.addDifficult();
           this.birdCollision(); 
           this.appearsBird();
-
-          // Score
           
-
     // 3. Dibujar los elementos
          ctx.drawImage(this.bg, 0, 0, canvas.width, canvas.height);
          this.cat.drawCat();
@@ -148,7 +144,6 @@ class Game {
     scoreAccumula.style.display = "none";
     scoreTotal.style.display = "none";
     scoremuestra.innerText = this.score;
-
     
     // 4. Parar el audio
    audio.pause(); 

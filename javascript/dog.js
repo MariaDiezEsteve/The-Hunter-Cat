@@ -7,9 +7,7 @@ class Dogs {
         this.h = 90;
         this.img = new Image()
         this.img.src= "./images/dog.png"
-        this.speed = 1;
-
-
+        this.speed = 2;
     }
 
     // Métodos de Dogs
@@ -19,7 +17,4 @@ class Dogs {
     moveDogs = () => {
         this.x = this.x - this.speed
     }
-
-
-
 }
