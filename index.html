@@ -8,7 +8,8 @@
     <link rel = "stylesheet" href="./style/style.css">
 </head>
 <body>
-    <div>      
+    <div class="container">    
+
         <!-- SPLASH SCREEN -->
         <div id="splash-screen" class="container">
           <img src="./images/huntercat.png" width="500" alt="logo">
@@ -24,16 +25,15 @@
       
         
         <!-- GAME SCREEN -->
-              <div class="container">
-               <canvas id="my-canvas" width="1000" height="700"></canvas>
+          <canvas id="my-canvas" width="1000" height="700"></canvas>            
                <div id="scoreTotal">
-                <div id="score">SCORE: <span id="score-accumulator">0</span></div>
+                <div id="score"><span>SCORE:</span><span id="score-accumulator">0</span></div>
               </div>
-              </div>
+              
         
         <!-- GAME OVER SCREEN -->
         <div id="gameover-screen" class="container">
-          <p id="nameOver"><span id="namePerson"></span><span id="scoremuestra"></span></p>
+          <p id="nameOver"><span id="namePerson"></span>  <span id="scoremuestra"></span></p>
           <img src="./images/gameover.png" width="500" alt="logo">
           <button id="restart-btn">Play Again</button>
           <button id="back-btn">End Game</button>

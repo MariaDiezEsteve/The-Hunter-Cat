@@ -18,21 +18,18 @@ const audio = new Audio("./music/game.mp3");
 let game;
 
 
-const backHome = (event) => {
-    initialScreen.style.display = "block";
-    scoreTotal.style.display = "none";
-    gameOverScreen.style.display = "none";
-}
-
 const startGame = (event) => {
 
     //Iniciando el juego
     initialScreen.style.display = "none";
     canvas.style.display = "block";
     gameOverScreen.style.display = "none";
+    scoreAccumula.style.display = "flex"
 
     // Score total
     scoreTotal.style.display = "flex";
+    scoreAccumula.innerText = 0
+  
 
     // Nombre del usuario
     
@@ -52,11 +49,19 @@ const startGame = (event) => {
     window.addEventListener("keydown", keyPressDown);
     window.addEventListener("keydown", keyPressLeft);
     window.addEventListener("keydown", keyPressRight);
-    scoreAccumula.innerText = 0;
     game.gameLoop()
  
 
 }
+
+
+const backHome = (event) => {
+    initialScreen.style.display = "flex";
+    scoreTotal.style.display = "none";
+    gameOverScreen.style.display = "none";
+}
+
+
 // Movimiento de Cat
 
 const keyPressUp = (event) => {

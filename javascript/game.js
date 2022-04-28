@@ -65,6 +65,9 @@ class Game {
           this.birdCollision(); 
           this.appearsBird();
 
+          // Score
+          
+
     // 3. Dibujar los elementos
          ctx.drawImage(this.bg, 0, 0, canvas.width, canvas.height);
          this.cat.drawCat();

@@ -1,6 +1,6 @@
 body {
     margin: 0;
-    background-color: white;
+    background-color: #fde8d0;
   }
 
 
@@ -47,24 +47,31 @@ width: 500px;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 20px;
+    margin: 5px;
   }
 
   #my-canvas, #gameover-screen {
       display: none;
   }
 
-
   #scoreTotal {
     color: #202d3c;
     font-size: 30px;
     display: none;
-    width: 200px;
+ }
+
+  #score {
+    color: #202d3c;
+    font-size: 30px;
+    display: flex;
+    width: 150px;
     height: 10px;
-    margin: 20px 20px;
-    font-weight: 800;
-    
-  }
+    font-weight: 800; 
+    flex-direction: row; 
+    padding-right: 55px;
+    justify-content: space-around;
+ }
+
   #name1{
     display: flex;
     flex-direction: row;
