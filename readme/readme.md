@@ -84,3 +84,6 @@ Afterwards, a score is calculated based on the mice and the birds caught.
 You have two buttons: the back to game button takes you back to the main page. And the play again button takes you back to the game screen to play again.
 
 # Extra Links
+- Presentation
+
+https://docs.google.com/presentation/d/1obZ_p_v7PUFtInRwRXgPnrLJo_MR5BbULWUfzw5kd_g/edit?usp=sharing
